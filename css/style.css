@@ -136,13 +136,7 @@ address { font-size: .95rem; color: var(--muted); }
 .deco-bunga-tr { top: 120px; right: -18px; width: 140px; }
 .deco-butterfly { top: 200px; right: 55px; width: 140px; z-index: 4; }
 .deco-bunga-ml { top: 50%; left: -20px; width: 135px; }
-.deco-kupu {
-    position: absolute;
-    top: 950px; /* Sesuaikan agar berada di dekat bunga */
-    left: 55px; /* Geser ke kiri atau kanan */
-    width: 140px; /* Sesuaikan ukuran kupu-kupu */
-    z-index: 10;
-}
+.deco-kupu { position: absolute; top: 950px; left: 55px; width: 140px; z-index: 10;}
 .deco-pemanis-mr { top: 56%; right: 12px; width: 56px; opacity: .7; }
 .deco-bunga-bl { bottom: 25px; left: -15px; width: 110px; opacity: .9; }
 
@@ -284,7 +278,7 @@ body.is-locked #bottomNav, body.is-locked #btnMusic { opacity: 0; pointer-events
     background: none;
     box-shadow: -10px 0 40px rgba(0, 0, 0, .18);
   }
-  /* background dikunci di kolom kanan saja */
+  /* background dilock buat bagian kanan */
   .invitation::before { content: ''; position: fixed; top: 0; right: 0; width: 35%; height: 100%; z-index: 0; background: var(--bg-main) center / cover no-repeat; pointer-events: none; }
   body.is-locked .invitation { overflow-y: hidden; }
 

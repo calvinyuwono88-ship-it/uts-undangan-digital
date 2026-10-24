@@ -1,4 +1,3 @@
-// pengaturan undangan, ubah di sini
 const CONFIG = {
   eventTitle: 'Pernikahan Imanuella & Samuel',
   eventLocation: 'Gedung Serbaguna Melati, Surabaya',
@@ -75,7 +74,7 @@ async function playMusic() {
     await bgm.play();
     wantMusic = true;
   } catch {
-    wantMusic = false; // autoplay diblokir / file belum ada
+    wantMusic = false;
   }
   updateMusicBtn(wantMusic);
 }
@@ -147,7 +146,7 @@ const navObserver = new IntersectionObserver((entries) => {
 }, { rootMargin: '-45% 0px -45% 0px' });
 navLinks.forEach((link) => navObserver.observe($(link.hash)));
 
-// rsvp (disimpan di browser; untuk data asli kirim ke Google Sheets/Formspree/Firebase)
+// rsvp
 const rsvpForm = $('#rsvpForm');
 
 rsvpForm.addEventListener('submit', async (e) => {
