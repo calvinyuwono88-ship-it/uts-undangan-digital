@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Undangan Pernikahan Imanuella &amp; Samuel</title>
+  <meta name="description" content="You are invited.">
+  <meta property="og:title" content="Undangan Pernikahan Imanuella &amp; Samuel">
+  <meta property="og:description" content="You are invited.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora:ital,wght@0,400;0,500;1,400&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="is-locked">
+
+  <!-- ornamen bunga & ranting, dipanggil pakai <use> -->
+  <svg width="0" height="0" class="position-absolute" aria-hidden="true">
+    <defs>
+      <symbol id="flower" viewBox="0 0 100 100">
+        <g fill="currentColor">
+          <ellipse cx="50" cy="26" rx="10" ry="20" fill-opacity=".55"/>
+          <ellipse cx="50" cy="26" rx="10" ry="20" fill-opacity=".55" transform="rotate(60 50 50)"/>
+          <ellipse cx="50" cy="26" rx="10" ry="20" fill-opacity=".55" transform="rotate(120 50 50)"/>
+          <ellipse cx="50" cy="26" rx="10" ry="20" fill-opacity=".55" transform="rotate(180 50 50)"/>
+          <ellipse cx="50" cy="26" rx="10" ry="20" fill-opacity=".55" transform="rotate(240 50 50)"/>
+          <ellipse cx="50" cy="26" rx="10" ry="20" fill-opacity=".55" transform="rotate(300 50 50)"/>
+          <circle cx="50" cy="50" r="8" fill-opacity=".9"/>
+        </g>
+      </symbol>
+      <symbol id="branch" viewBox="0 0 240 70">
+        <path d="M6 40 C 60 10, 120 70, 234 30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        <g fill="currentColor" fill-opacity=".5">
+          <ellipse cx="50" cy="26" rx="14" ry="5" transform="rotate(-30 50 26)"/>
+          <ellipse cx="88" cy="46" rx="14" ry="5" transform="rotate(30 88 46)"/>
+          <ellipse cx="130" cy="44" rx="14" ry="5" transform="rotate(-25 130 44)"/>
+          <ellipse cx="172" cy="30" rx="14" ry="5" transform="rotate(25 172 30)"/>
+          <ellipse cx="210" cy="30" rx="12" ry="4.5" transform="rotate(-20 210 30)"/>
+        </g>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- COVER -->
+  <section id="cover" class="position-fixed top-0 start-0 w-100 h-100 d-flex">
+    <div class="cover-left d-none d-md-flex align-items-center justify-content-center text-white" aria-hidden="true">
+      <div class="text-center">
+        <p class="eyebrow text-white-50">The Wedding of</p>
+        <h2 class="script side-names text-white">Imanuella &amp; Samuel</h2>
+        <p class="mb-0">1 Desember 2026</p>
+      </div>
+    </div>
+
+    <div class="cover-right position-relative d-flex align-items-end justify-content-center">
+      <div class="cover-inner position-relative w-100 text-center text-white">
+        <img src="assets/icons/kupu kupu.gif" alt="" class="cover-butterfly mx-auto" aria-hidden="true">
+        <p class="cover-eyebrow fst-italic">The Wedding of</p>
+        <h1 class="cover-names fw-semibold">Imanuella &amp; Samuel</h1>
+        <p class="cover-date text-uppercase">1 Desember 2026</p>
+        <p class="cover-to">Kepada Yth. Bapak/Ibu/Saudara/i</p>
+        <h2 class="guest-name fw-semibold text-uppercase" data-guest>Tamu Undangan</h2>
+        <button id="btnOpen" class="btn-buka rounded-pill border-0 text-white fw-semibold text-uppercase" type="button">
+          Buka Undangan
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <div class="page d-flex flex-column flex-md-row min-vh-100">
+
+    <aside class="side-hero d-none d-md-flex align-items-center justify-content-center text-white" aria-hidden="true">
+      <div class="text-center">
+        <p class="eyebrow text-white-50">The Wedding of</p>
+        <h2 class="script side-names text-white">Imanuella &amp; Samuel</h2>
+        <p class="mb-0">1 Desember 2026</p>
+      </div>
+    </aside>
+
+    <main class="invitation">
+
+      <!-- welcome -->
+      <section id="welcome" class="section section-hero text-center">
+        <svg class="floral floral-tr position-absolute pe-none" aria-hidden="true"><use href="#flower"/></svg>
+        <svg class="floral floral-bl position-absolute pe-none" aria-hidden="true"><use href="#flower"/></svg>
+
+        <p class="eyebrow reveal">The Wedding of</p>
+        <h2 class="script hero-names mb-4 reveal">Imanuella &amp; Samuel</h2>
+
+        <figure class="arch-photo mx-auto reveal zoom">
+          <img src="assets/images/foto 1.jpg" alt="Foto mempelai" class="w-100 object-fit-cover">
+        </figure>
+
+        <p class="lead-text mx-auto reveal">
+          Dengan penuh syukur dan sukacita, kami mengundang Bapak/Ibu/Saudara/i
+          untuk hadir dan memberikan doa restu pada hari bahagia kami.
+        </p>
+        <svg class="branch reveal" aria-hidden="true"><use href="#branch"/></svg>
+        <p class="quote mx-auto mb-0 fst-italic reveal">
+          “Sehingga keduanya itu menjadi satu daging. Demikianlah mereka bukan lagi dua, melainkan satu. Karena itu, apa yang telah dipersatukan Allah, tidak boleh diceraikan manusia.”
+          <cite class="d-block mt-2 fst-normal fw-medium text-rose">Markus 10:8-9 (TB)</cite>
+        </p>
+      </section>
+
+      <!-- mempelai -->
+      <section id="couple" class="section section-couple text-center">
+        <img src="assets/icons/pemanis.png" alt="" class="couple-deco deco-pemanis-tr">
+        <img src="assets/icons/pemanis balik.png" alt="" class="couple-deco deco-pemanis-tl">
+        <img src="assets/icons/bunga 1.png" alt="" class="couple-deco deco-bunga deco-bunga-tr">
+        <img src="assets/icons/kupu kupu.gif" alt="" class="couple-deco deco-butterfly">
+        <img src="assets/icons/bunga 1 balik.png" alt="" class="couple-deco deco-bunga deco-bunga-ml">
+        <img src="assets/icons/pemanis.png" alt="" class="couple-deco deco-pemanis-mr">
+        <img src="assets/icons/bunga 2.png" alt="" class="couple-deco deco-bunga deco-bunga-bl">
+        <img src="assets/icons/kupu kupu.gif" alt="" class="couple-deco deco-kupu">
+        <div class="cloud-frame position-relative w-100 mx-auto reveal zoom">
+          <img src="assets/icons/awan atas.png" alt="" class="cloud-edge-top w-100">
+
+          <div class="cloud-body position-relative">
+            <div class="mb-4">
+              <div class="wax-seal d-flex justify-content-center">
+                <svg viewBox="0 0 100 100" width="70" height="70" aria-hidden="true">
+                  <defs>
+                    <radialGradient id="waxGrad" cx="35%" cy="30%" r="70%">
+                      <stop offset="0%" stop-color="#e8a8b1"/>
+                      <stop offset="50%" stop-color="#c47883"/>
+                      <stop offset="100%" stop-color="#8a3a46"/>
+                    </radialGradient>
+                    <filter id="waxShadow" x="-20%" y="-20%" width="140%" height="140%">
+                      <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#5a222a" flood-opacity="0.35"/>
+                    </filter>
+                  </defs>
+                  <path d="M50 5 C57 5, 62 8, 68 6 C75 4, 80 9, 84 14 C89 20, 93 25, 94 32 C95 39, 93 45, 95 52 C97 60, 93 66, 90 72 C86 78, 83 83, 76 87 C69 91, 63 89, 56 92 C49 95, 43 95, 36 93 C29 90, 24 93, 18 89 C12 84, 9 79, 7 72 C4 65, 8 59, 6 52 C4 45, 6 39, 8 32 C10 25, 14 20, 20 15 C26 10, 31 12, 38 8 C43 5, 46 5, 50 5 Z"
+                        fill="url(#waxGrad)" filter="url(#waxShadow)"/>
+                  <circle cx="50" cy="50" r="32" fill="none" stroke="#e8a8b1" stroke-width="1.5" opacity="0.6"/>
+                  <circle cx="50" cy="50" r="31" fill="none" stroke="#68242f" stroke-width="1.2" opacity="0.5"/>
+                  <text x="50" y="56" text-anchor="middle" font-family="'Playfair Display', serif" font-size="20" font-weight="600" fill="#5c1e27" letter-spacing="1">SI</text>
+                </svg>
+              </div>
+
+              <p class="couple-subtitle fw-medium">With Love</p>
+              <p class="couple-opening mx-auto">
+                Tuhan menjadikan segala sesuatu indah pada waktu-Nya. Indah saat Ia mempertemukan, indah saat Ia menumbuhkan kasih, dan indah saat Ia menyatukan dalam Ikatan Pernikahan Kudus. Besar harapan kami kiranya Bapak/Ibu/Saudara/i turut bersukacita &amp; mendoakan pernikahan kami:
+              </p>
+            </div>
+
+            <article class="mb-2">
+              <div class="couple-oval-frame rounded-circle overflow-hidden mx-auto mb-3">
+                <img src="assets/images/foto perempuan.png" alt="Imanuella Kriseka Widyasari" class="couple-oval-photo w-100 h-100 object-fit-cover">
+              </div>
+              <h3 class="couple-name">Imanuella Kriseka Widyasari</h3>
+              <p class="couple-parents mb-2">
+                Putri dari<br>
+                Bapak Widodo Basuki<br>
+                &amp; Ibu Siti Juwariyah
+              </p>
+              <a class="couple-ig-btn d-inline-flex align-items-center justify-content-center rounded-circle text-white text-decoration-none mt-1"
+                 href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram Imanuella">
+                <i class="bi bi-instagram"></i>
+              </a>
+            </article>
+
+            <p class="script couple-amp my-4">&amp;</p>
+
+            <article class="mb-2">
+              <div class="couple-oval-frame rounded-circle overflow-hidden mx-auto mb-3">
+                <img src="assets/images/foto laki laki.png" alt="Samuel Guhan Nugraha Putra" class="couple-oval-photo w-100 h-100 object-fit-cover">
+              </div>
+              <h3 class="couple-name">Samuel Guhan Nugraha Putra</h3>
+              <p class="couple-parents mb-2">
+                Putra dari<br>
+                Bapak Teguh Imam Riyadi<br>
+                &amp; Ibu Anik Kristianingsih
+              </p>
+              <a class="couple-ig-btn d-inline-flex align-items-center justify-content-center rounded-circle text-white text-decoration-none mt-1"
+                 href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram Samuel">
+                <i class="bi bi-instagram"></i>
+              </a>
+            </article>
+          </div>
+
+          <img src="assets/icons/awan bawah.png" alt="" class="cloud-edge-bottom w-100">
+        </div>
+      </section>
+
+      <!-- countdown: ubah tanggal di data-date -->
+      <section id="save-date" class="section section-countdown text-center text-white" data-date="2026-12-01T08:00:00+07:00">
+        <p class="eyebrow reveal">Wedding Day</p>
+        <h2 class="date-big mb-4 reveal">1 <small>Desember 2026</small></h2>
+
+        <div class="countdown row g-2 justify-content-center reveal" role="timer" aria-live="off">
+          <div class="col-3"><div class="time-box"><span id="cdDays">00</span><small>Hari</small></div></div>
+          <div class="col-3"><div class="time-box"><span id="cdHours">00</span><small>Jam</small></div></div>
+          <div class="col-3"><div class="time-box"><span id="cdMinutes">00</span><small>Menit</small></div></div>
+          <div class="col-3"><div class="time-box"><span id="cdSeconds">00</span><small>Detik</small></div></div>
+        </div>
+
+        <h3 class="script save-title text-white reveal">Save the Date</h3>
+        <p class="reveal">for the wedding of<br><strong>Imanuella &amp; Samuel</strong></p>
+
+        <div class="d-grid gap-2 col-10 col-sm-8 mx-auto reveal">
+          <button id="btnCalendar" class="btn btn-light" type="button">
+            <i class="bi bi-calendar-plus me-2"></i>Add to Calendar
+          </button>
+        </div>
+      </section>
+
+      <!-- acara -->
+      <section id="event" class="section text-center">
+        <h2 class="script section-title reveal">Acara</h2>
+
+        <article class="event-card glass mb-4 reveal">
+          <i class="bi bi-bell event-icon text-rose"></i>
+          <h3>Pemberkatan</h3>
+          <p class="event-date fw-medium">Selasa, 1 Desember 2026</p>
+          <p class="text-rose fw-medium"><i class="bi bi-clock me-1"></i>08:00 WIB</p>
+          <p class="event-place">Gereja Kasih</p>
+          <address>Jl. Mawar No. 12, Kec. Surabaya, Kota Surabaya, Jawa Timur 60111</address>
+          <a class="btn btn-rose" href="https://maps.google.com/?q=Surabaya" target="_blank" rel="noopener">
+            <i class="bi bi-geo-alt me-1"></i>Lihat Lokasi
+          </a>
+        </article>
+
+        <article class="event-card glass mb-4 reveal">
+          <i class="bi bi-cup-heart event-icon text-rose"></i>
+          <h3>Resepsi Pernikahan</h3>
+          <p class="event-date fw-medium">Selasa, 1 Desember 2026</p>
+          <p class="text-rose fw-medium"><i class="bi bi-clock me-1"></i>12:00 – 14:00 WIB</p>
+          <p class="event-place">Gedung Serbaguna Melati</p>
+          <address>Jl. Melati No. 5, Kec. Surabaya, Kota Surabaya, Jawa Timur 60112</address>
+          <a class="btn btn-rose" href="https://maps.google.com/?q=Surabaya" target="_blank" rel="noopener">
+            <i class="bi bi-geo-alt me-1"></i>Lihat Lokasi
+          </a>
+        </article>
+      </section>
+
+      <!-- rsvp -->
+      <section id="rsvp" class="section section-blush text-center">
+        <h2 class="script section-title reveal">RSVP</h2>
+        <p class="reveal">
+          Merupakan suatu kehormatan dan kebahagiaan bagi kami sekeluarga apabila
+          Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu.
+        </p>
+
+        <form id="rsvpForm" class="glass p-4 text-start reveal" novalidate>
+          <div class="mb-3">
+            <label for="rsvpName" class="form-label">Nama</label>
+            <input type="text" id="rsvpName" class="form-control" placeholder="Nama lengkap" required>
+            <div class="invalid-feedback">Nama wajib diisi.</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="rsvpGuests" class="form-label">Jumlah tamu (orang)</label>
+            <select id="rsvpGuests" class="form-select" required>
+              <option value="" selected disabled>Pilih jumlah</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+            <div class="invalid-feedback">Pilih jumlah tamu.</div>
+          </div>
+
+          <fieldset class="mb-4">
+            <legend class="form-label fs-6">Konfirmasi kehadiran</legend>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="attend" id="attendYes" value="Hadir" required>
+              <label class="form-check-label" for="attendYes">Hadir</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="attend" id="attendNo" value="Maaf, saya tidak bisa hadir" required>
+              <label class="form-check-label" for="attendNo">Maaf, saya tidak bisa hadir</label>
+            </div>
+          </fieldset>
+
+          <button type="submit" class="btn btn-rose w-100">Submit</button>
+          <div id="rsvpAlert" class="alert alert-success mt-3 mb-0 d-none" role="status"></div>
+        </form>
+      </section>
+
+      <!-- gallery -->
+      <section id="gallery" class="section text-center">
+        <h2 class="script section-title reveal">Gallery</h2>
+        <div class="row g-2">
+          <div class="col-6 reveal zoom"><img class="gallery-img" src="assets/images/foto 2.jpg" alt="Foto galeri 2" loading="lazy"></div>
+          <div class="col-6 reveal zoom"><img class="gallery-img" src="assets/images/foto 3.jpg" alt="Foto galeri 3" loading="lazy"></div>
+          <div class="col-12 reveal zoom"><img class="gallery-img gallery-wide" src="assets/images/foto landscape.jpg" alt="Foto galeri landscape" loading="lazy"></div>
+          <div class="col-6 reveal zoom"><img class="gallery-img" src="assets/images/foto 4.jpg" alt="Foto galeri 4" loading="lazy"></div>
+          <div class="col-6 reveal zoom"><img class="gallery-img" src="assets/images/foto 5.jpg" alt="Foto galeri 5" loading="lazy"></div>
+          <div class="col-6 reveal zoom"><img class="gallery-img" src="assets/images/foto 6.jpg" alt="Foto galeri 6" loading="lazy"></div>
+          <div class="col-6 reveal zoom"><img class="gallery-img" src="assets/images/foto 7.jpg" alt="Foto galeri 7" loading="lazy"></div>
+        </div>
+      </section>
+
+      <!-- kisah cinta -->
+      <section id="story" class="section section-blush">
+        <h2 class="script section-title text-center reveal">Kisah Cinta</h2>
+        <ol class="timeline list-unstyled ps-4 mb-0">
+          <li class="glass rounded-4 position-relative mb-4 reveal">
+            <span class="timeline-year text-rose fw-medium">2014</span>
+            <h3>The Beginning of Us</h3>
+            <p>Kami berada di sekolah yang sama dan tumbuh sebagai sahabat dengan perasaan yang belum terucap. Setelah lulus, kami berpisah mengejar mimpi masing-masing.</p>
+          </li>
+          <li class="glass rounded-4 position-relative mb-4 reveal">
+            <span class="timeline-year text-rose fw-medium">2020</span>
+            <h3>Meeting Again</h3>
+            <p>Enam tahun kemudian kami bertemu kembali tanpa sengaja. Kedekatan itu hadir seketika, dan kali ini kami berani jujur pada perasaan.</p>
+          </li>
+          <li class="glass rounded-4 position-relative mb-4 reveal">
+            <span class="timeline-year text-rose fw-medium">2022</span>
+            <h3>Love Across Islands</h3>
+            <p>Jarak memisahkan kami, penuh rindu dan keraguan. Namun kami memilih bertahan dengan percaya dan komitmen.</p>
+          </li>
+          <li class="glass rounded-4 position-relative mb-4 reveal">
+            <span class="timeline-year text-rose fw-medium">2026</span>
+            <h3>Forever Decision</h3>
+            <p>Setelah bertahun-tahun, kami bersatu dengan yakin dan memutuskan untuk menikah.</p>
+          </li>
+        </ol>
+      </section>
+
+      <!-- wedding gift -->
+      <section id="gift" class="section text-center">
+        <h2 class="script section-title reveal">Wedding Gift</h2>
+        <p class="reveal">
+          Kehadiran dan doa Anda adalah hadiah terindah bagi kami. Namun, apabila
+          berkenan memberikan tanda kasih, silakan gunakan informasi di bawah ini.
+        </p>
+
+        <button id="btnGift" class="btn btn-rose reveal" type="button"
+                data-bs-toggle="collapse" data-bs-target="#giftList" aria-expanded="false" aria-controls="giftList">
+          <i class="bi bi-gift me-2"></i><span>Kirim Hadiah</span>
+        </button>
+
+        <div class="collapse mt-4" id="giftList">
+          <div class="gift-card glass shadow-none mb-3">
+            <h3>BCA</h3>
+            <p class="gift-number" id="acc1">1234567890</p>
+            <p class="muted mb-2">a.n. Imanuella Kriseka Widyasari</p>
+            <button class="btn btn-outline-rose btn-sm" data-copy="#acc1" type="button">
+              <i class="bi bi-copy me-1"></i>Salin
+            </button>
+          </div>
+          <div class="gift-card glass shadow-none mb-3">
+            <h3>Mandiri</h3>
+            <p class="gift-number" id="acc2">0987654321</p>
+            <p class="muted mb-2">a.n. Samuel Guhan Nugraha Putra</p>
+            <button class="btn btn-outline-rose btn-sm" data-copy="#acc2" type="button">
+              <i class="bi bi-copy me-1"></i>Salin
+            </button>
+          </div>
+          <div class="gift-card glass shadow-none mb-3">
+            <h3>Alamat Pengiriman Kado</h3>
+            <p class="muted mb-0">Samuel Guhan Nugraha Putra<br>Jl. Mawar No. 20, Kota Surabaya, Jawa Timur 60111</p>
+          </div>
+          <p class="small muted">
+            Mohon konfirmasi hadiah dengan mengirim bukti transfer/resi kepada mempelai. Terima kasih.
+          </p>
+        </div>
+      </section>
+
+      <!-- ucapan & doa -->
+      <section id="wishes" class="section section-blush text-center">
+        <h2 class="script section-title reveal">Ucapan &amp; Doa</h2>
+        <p class="reveal">Sampaikan doa dan harapan terbaik di sini, saat kami memulai perjalanan baru bersama.</p>
+
+        <form id="wishForm" class="glass p-4 text-start reveal" novalidate>
+          <div class="mb-3">
+            <label for="wishName" class="form-label">Nama</label>
+            <input type="text" id="wishName" class="form-control" maxlength="50" required>
+            <div class="invalid-feedback">Nama wajib diisi.</div>
+          </div>
+          <div class="mb-3">
+            <label for="wishMessage" class="form-label">Ucapan &amp; Doa</label>
+            <textarea id="wishMessage" class="form-control" rows="4" maxlength="500" required></textarea>
+            <div class="invalid-feedback">Ucapan tidak boleh kosong.</div>
+          </div>
+          <button type="submit" class="btn btn-rose w-100">Kirim</button>
+        </form>
+
+        <p class="small muted mt-4 mb-2"><span id="wishCount">0</span> ucapan</p>
+        <div id="wishList" class="wish-list overflow-y-auto pe-1 text-start" aria-live="polite"></div>
+      </section>
+
+      <!-- penutup -->
+      <section id="closing" class="section section-closing text-center">
+        <img src="assets/images/foto 8.jpg" alt="" class="closing-photo mx-auto rounded-4 reveal zoom" loading="lazy">
+        <p class="reveal">
+          Menjadi sebuah kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir
+          di hari bahagia kami. Terima kasih atas segala ucapan, doa, dan perhatian yang diberikan.
+        </p>
+        <p class="reveal"><strong>Sampai jumpa di hari pernikahan kami!</strong></p>
+        <h2 class="script hero-names mb-4 reveal">Imanuella &amp; Samuel</h2>
+        <p class="small muted mt-5 mb-0">Made with <i class="bi bi-heart-fill text-danger"></i> by Calvin</p>
+      </section>
+
+    </main>
+  </div>
+
+  <nav id="bottomNav" class="position-fixed d-flex gap-1 rounded-pill" aria-label="Navigasi undangan">
+    <a href="#welcome" aria-label="Beranda"><i class="bi bi-house-heart"></i></a>
+    <a href="#couple" aria-label="Mempelai"><i class="bi bi-people"></i></a>
+    <a href="#event" aria-label="Acara"><i class="bi bi-calendar-heart"></i></a>
+    <a href="#rsvp" aria-label="RSVP"><i class="bi bi-envelope-heart"></i></a>
+    <a href="#wishes" aria-label="Ucapan"><i class="bi bi-chat-heart"></i></a>
+  </nav>
+
+  <audio id="bgm" src="assets/audio/backsound.mp3" loop preload="auto"></audio>
+  <button id="btnMusic" class="position-fixed d-flex align-items-center justify-content-center rounded-circle border-0 text-white" type="button" aria-label="Putar atau jeda musik">
+    <i class="bi bi-play-fill"></i>
+  </button>
+
+  <div id="toast" class="position-fixed text-white rounded-pill" role="status" aria-live="polite"></div>
+
+  <div class="modal fade" id="lightbox" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-transparent border-0">
+        <button type="button" class="btn-close btn-close-white ms-auto mb-2" data-bs-dismiss="modal" aria-label="Tutup"></button>
+        <img id="lightboxImg" src="" alt="" class="img-fluid rounded">
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
