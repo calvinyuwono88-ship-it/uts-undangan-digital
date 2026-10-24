@@ -5,18 +5,31 @@ const CONFIG = {
   eventDescription: 'Kami mengundang Anda untuk hadir di hari bahagia kami.',
   durationHours: 6,
   musicVolume: 0.6,
-  wishKey: 'undangan-ucapan-v1',
-  rsvpKey: 'undangan-rsvp-v1',
+
 };
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
 
-const load = (key, fallback) => {
-  try { return JSON.parse(localStorage.getItem(key)) ?? fallback; }
-  catch { return fallback; }
+const DB = {
+  url: 'https://ufmxxsljrzgqgjiiqwyt.supabase.co/rest/v1',
+  key: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVmbXh4c2xqcnpncWdqaWlxd3l0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTI4NTY2MDgsImV4cCI6MjEwODQzMjYwOH0.u54TtJKS9xJYuawD9wLXoEZPgeNx55yinlfrIBTCipo',
 };
-const save = (key, value) => localStorage.setItem(key, JSON.stringify(value));
+
+async function db(table, method = 'GET', body = null, query = '') {
+  const res = await fetch(`${DB.url}/${table}${query}`, {
+    method,
+    headers: {
+      apikey: DB.key,
+      Authorization: `Bearer ${DB.key}`,
+      'Content-Type': 'application/json',
+      Prefer: 'return=minimal',
+    },
+    body: body && JSON.stringify(body),
+  });
+  if (!res.ok) throw new Error(res.status);
+  return method === 'GET' ? res.json() : null;
+}
 
 let toastTimer;
 function showToast(msg) {
@@ -137,18 +150,22 @@ navLinks.forEach((link) => navObserver.observe($(link.hash)));
 // rsvp (disimpan di browser; untuk data asli kirim ke Google Sheets/Formspree/Firebase)
 const rsvpForm = $('#rsvpForm');
 
-rsvpForm.addEventListener('submit', (e) => {
+rsvpForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   rsvpForm.classList.add('was-validated');
   if (!rsvpForm.checkValidity()) return;
 
   const data = {
     nama: $('#rsvpName').value.trim(),
-    jumlah: $('#rsvpGuests').value,
+    jumlah: Number($('#rsvpGuests').value),
     kehadiran: $('input[name="attend"]:checked').value,
-    waktu: new Date().toISOString(),
   };
-  save(CONFIG.rsvpKey, [...load(CONFIG.rsvpKey, []), data]);
+
+  try {
+    await db('rsvp', 'POST', data);
+  } catch {
+    return showToast('Gagal mengirim, coba lagi ya');
+  }
 
   const alertBox = $('#rsvpAlert');
   alertBox.textContent = data.kehadiran === 'Hadir'
@@ -189,13 +206,6 @@ $$('[data-copy]').forEach((btn) => {
 const wishForm = $('#wishForm');
 const wishList = $('#wishList');
 
-const dummyWishes = [
-  { name: 'jokowi', message: 'Selamat menempuh hidup baru yaa!', time: Date.now() - 3 * 3600000 },
-  { name: 'Prabowo', message: 'Happy wedding! Semoga bahagia selalu dan langgeng sampai kakek nenek.', time: Date.now() - 26 * 3600000 },
-  { name: 'Gibran', message: 'Congrats ya', time: Date.now() - 72 * 3600000 },
-];
-const wishes = load(CONFIG.wishKey, dummyWishes);
-
 function timeAgo(timestamp) {
   const secs = (Date.now() - timestamp) / 1000;
   if (secs < 60) return 'baru saja';
@@ -203,12 +213,19 @@ function timeAgo(timestamp) {
   return `${Math.floor(secs / size)} ${label} yang lalu`;
 }
 
-function renderWishes() {
+async function renderWishes() {
+  let wishes = [];
+  try {
+    wishes = await db('wishes', 'GET', null, '?select=name,message,created_at&order=created_at.desc&limit=100');
+  } catch {
+    wishList.textContent = 'Ucapan belum bisa dimuat.';
+    return;
+  }
+
   wishList.replaceChildren(...wishes.map((w) => {
     const item = document.createElement('article');
     item.className = 'wish-item glass shadow-none';
-    // pakai textContent, bukan innerHTML, biar aman dari XSS
-    item.append(...[['strong', w.name], ['p', w.message], ['time', timeAgo(w.time)]]
+    item.append(...[['strong', w.name], ['p', w.message], ['time', timeAgo(Date.parse(w.created_at))]]
       .map(([tag, text]) => Object.assign(document.createElement(tag), { textContent: text })));
     return item;
   }));
@@ -216,20 +233,22 @@ function renderWishes() {
 }
 renderWishes();
 
-wishForm.addEventListener('submit', (e) => {
+wishForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   wishForm.classList.add('was-validated');
   if (!wishForm.checkValidity()) return;
 
-  wishes.unshift({
-    name: $('#wishName').value.trim(),
-    message: $('#wishMessage').value.trim(),
-    time: Date.now(),
-  });
-  save(CONFIG.wishKey, wishes);
-  renderWishes();
-  wishList.scrollTop = 0;
+  try {
+    await db('wishes', 'POST', {
+      name: $('#wishName').value.trim(),
+      message: $('#wishMessage').value.trim(),
+    });
+  } catch {
+    return showToast('Gagal mengirim, coba lagi ya');
+  }
 
+  await renderWishes();
+  wishList.scrollTop = 0;
   wishForm.reset();
   wishForm.classList.remove('was-validated');
   if (guest) $('#wishName').value = guest;
